@@ -8,6 +8,7 @@ import com.heima.article.mapper.ApArticleContentMapper;
 import com.heima.article.mapper.ApArticleMapper;
 import com.heima.article.mapper.ArticleHomeMapper;
 import com.heima.article.service.ApArticleService;
+import com.heima.article.service.ArticleFreemarkerService;
 import com.heima.article.service.ArticleHomeService;
 import com.heima.model.article.dtos.ArticleDto;
 import com.heima.model.article.pojos.ApArticle;
@@ -35,6 +36,9 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
 
     @Autowired
     private ApArticleContentMapper apArticleContentMapper;
+
+    @Autowired
+    private ArticleFreemarkerService articleFreemarkerService;
     /**
      * 保存和修改文章内容+文章配置+文章信息
      *
@@ -73,7 +77,8 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
                 apArticleContentMapper.updateById(apArticleContent);
             }
         }
-
+        //异步调用 生成静态文件上传到minio中
+        articleFreemarkerService.buildArticleToMinIO(apArticle,dto.getContent());
         //4.返回文章id
         ResponseResult responseResult=ResponseResult.okResult(apArticle==null?"":apArticle.getId());
         return responseResult;

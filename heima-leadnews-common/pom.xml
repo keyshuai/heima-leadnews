@@ -13,6 +13,8 @@
     <name>heima-leadnews-common</name>
 
     <dependencies>
+
+
         <dependency>
             <groupId>net.sourceforge.tess4j</groupId>
             <artifactId>tess4j</artifactId>
