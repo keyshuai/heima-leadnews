@@ -11,12 +11,13 @@
         <module name="heima-file-starter" />
         <module name="minio-demo" />
         <module name="heima-leadnews-wemedia-gateway" />
-        <module name="heima-leadnews-utils" />
         <module name="heima-leadnews-wemedia" />
+        <module name="tess4j-demo" />
         <module name="heima-leadnews-feign-api" />
         <module name="heima-leadnews-user" />
-        <module name="heima-leadnews-app-gateway" />
         <module name="heima-leadnews-article" />
+        <module name="heima-leadnews-utils" />
+        <module name="heima-leadnews-app-gateway" />
         <module name="heima-leadnews-common" />
         <module name="heima-leadnews-model" />
       </profile>
@@ -41,6 +42,7 @@
       <module name="heima-leadnews-wemedia-gateway" target="1.8" />
       <module name="leadnews-user" target="1.8" />
       <module name="minio-demo" target="1.8" />
+      <module name="tess4j-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -63,6 +65,7 @@
       <module name="heima-leadnews-wemedia-gateway" options="-parameters" />
       <module name="leadnews-user" options="-parameters" />
       <module name="minio-demo" options="-parameters" />
+      <module name="tess4j-demo" options="-parameters" />
     </option>
   </component>
 </project>

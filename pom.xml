@@ -18,6 +18,7 @@
         <module>heima-leadnews-test</module>
         <module>heima-leadnews-test/minio-demo</module>
         <module>heima-leadnews-basic</module>
+        <module>tess4j-demo</module>
     </modules>
 
     <!-- 继承Spring boot工程 -->
